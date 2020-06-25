@@ -1,5 +1,5 @@
 ## Witnet Library
-This library is light client implementation for witnet node, capable  of directly interacting with witnet node.
+This library is light client implementation for witnet node, capable  of directly interacting with witnet node. ( See [Witnet.io](https://witnet.io/) for more information )
 
 ### Features
 
@@ -16,8 +16,8 @@ from witnet_lib.utils import AttrDict
 # Setting config
 config = AttrDict()
 config.update({
-    "genesis_sec": 1590055200,
-    "magic": 45507,
+    "genesis_sec": 1592996400,
+    "magic": 36162,
     "sender_addr": "127.0.0.1:21341",
     "time_per_epoch": 45,
 })
@@ -61,8 +61,8 @@ from witnet_lib import utils
 from witnet_lib.map_nodes  import MapNodes
 config = utils.AttrDict()
 config.update({
-    "genesis_sec": 1590055200,
-    "magic": 45507,
+    "genesis_sec": 1592996400,
+    "magic": 36162,
     "sender_addr": "127.0.0.1:21341",
     "time_per_epoch": 45,
 })

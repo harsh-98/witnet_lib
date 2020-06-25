@@ -4,8 +4,8 @@ from witnet_lib import utils
 if __name__ == "__main__":
     config = utils.AttrDict()
     config.update({
-        "genesis_sec": 1590055200,
-        "magic": 45507,
+        "genesis_sec": 1592996400,
+        "magic": 36162,
         "sender_addr": "127.0.0.1:21341",
         "time_per_epoch": 45,
     })
