@@ -1,7 +1,7 @@
 from datetime import datetime
 import random
-from proto_lib import witnet_pb2
-from logger import log
+from witnet_lib.proto_lib import witnet_pb2
+from witnet_lib.logger import log
 
 def byte_ip(addr):
     ip, port = addr.split(":")
@@ -12,7 +12,7 @@ def byte_ip(addr):
     l = ip+port
     return bytes(l)
 
-class Witnet_Msg():
+class WitnetMsgHandler():
     def __init__(self, config):
         self.magic = config.magic
         self.genesis_sec = config.genesis_sec
@@ -59,8 +59,8 @@ class Witnet_Msg():
         msg.kind.CopyFrom(cmd)
         serialized = msg.SerializeToString()
         bytes_len = len(serialized)
-        length = bytes_len.to_bytes((bytes_len.bit_length() + 7) // 8, byteorder='big')
-        msg = b'\x00\x00\x00' + length + serialized
+        length = bytes_len.to_bytes(4, byteorder='big')
+        msg = length + serialized
         return msg
 
     def parse_msg(self, rece_bytes):

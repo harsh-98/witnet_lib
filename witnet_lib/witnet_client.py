@@ -1,12 +1,12 @@
-from logger import log
-from proto_lib.witnet_msg import Witnet_Msg
-from tcp_handler import TCPSocket
+from witnet_lib.logger import log
+from witnet_lib.proto_lib.witnet_msg import WitnetMsgHandler
+from witnet_lib.tcp_handler import TCPSocket
 class AttrDict(dict):
     def __init__(self, *args, **kwargs):
         super(AttrDict, self).__init__(*args, **kwargs)
         self.__dict__ = self
 
-class Witnet_Client():
+class WitnetClient():
     
     def __init__(self):
         self.config = AttrDict()
@@ -15,9 +15,9 @@ class Witnet_Client():
             "magic": 45507,
             "sender_addr": "127.0.0.1:21341",
         })
-        self.msg_handler = Witnet_Msg(self.config)
+        self.msg_handler = WitnetMsgHandler(self.config)
 
-    def get_peers(self, peer_addr):
+    def handshake(self, peer_addr):
         # connect to peer 
         self.tcp_handler = TCPSocket("connect")
         self.tcp_handler.connect(peer_addr)
@@ -37,6 +37,7 @@ class Witnet_Client():
         verack_msg = self.msg_handler.serialize(verack_cmd)
         self.tcp_handler.send(verack_msg)
 
+    def get_peers(self):
         # send get peer request to node
         get_peers_cmd = self.msg_handler.get_peers_cmd()
         get_peers_msg = self.msg_handler.serialize(get_peers_cmd)
@@ -47,6 +48,6 @@ class Witnet_Client():
             parsed_msg = self.msg_handler.parse_msg(msg)
             peers = self.msg_handler.parse_peers(parsed_msg)
             if len(peers) > 0 :
-                self.tcp_handler.close()
                 return peers
-
+    def close(self):
+        self.tcp_handler.close()

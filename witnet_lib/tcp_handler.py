@@ -1,6 +1,6 @@
 import socket
 from datetime import datetime
-from logger import log
+from witnet_lib.logger import log
 import random
 import threading
 import time
