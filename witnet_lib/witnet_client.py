@@ -33,12 +33,14 @@ class WitnetClient():
         get_peers_cmd = self.msg_handler.get_peers_cmd()
         get_peers_msg = self.msg_handler.serialize(get_peers_cmd)
         self.tcp_handler.send(get_peers_msg)
-
-        while True:
+        i = 0
+        while i<10:
             msg = self.tcp_handler.receive_witnet_msg()
             parsed_msg = self.msg_handler.parse_msg(msg)
             peers = self.msg_handler.parse_peers(parsed_msg)
             if len(peers) > 0 :
                 return peers
+            i+=1
+        return []
     def close(self):
         self.tcp_handler.close()

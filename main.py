@@ -10,5 +10,6 @@ if __name__ == "__main__":
         "time_per_epoch": 45,
     })
     mapper = MapNodes(config, ["127.0.0.1:21337"])
-    all_nodes = mapper.start_mapping_workers(3)
+    all_nodes, active_nodes = mapper.start_mapping_workers(3)
     print(all_nodes)
+    print("Acitve nodes:", active_nodes)

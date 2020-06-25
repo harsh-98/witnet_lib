@@ -16,8 +16,9 @@ class MapNodes():
         for peer_addr in peer_addrs: 
             self.queue.put(peer_addr)
         self.visited_nodes = set()
-
+        self.active = {}
         # https://www.educative.io/edpresso/what-are-locks-in-python
+        self.active_set_lock = threading.Lock()
         self.queue_lock = threading.Lock()
         self.set_lock = threading.Lock()
 
@@ -40,6 +41,9 @@ class MapNodes():
                 client.handshake(peer)
                 peers = client.get_peers()
                 client.close()
+                self.active_set_lock.acquire()
+                self.active[peer]=peers
+                self.active_set_lock.release()
             except:
                 peers = []
             log.info(peers)
@@ -67,4 +71,4 @@ class MapNodes():
 
         for thread in threads:
             thread.join()
-        return self.visited_nodes
+        return self.visited_nodes, self.active
