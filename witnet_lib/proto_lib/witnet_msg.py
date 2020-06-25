@@ -17,6 +17,7 @@ class WitnetMsgHandler():
         self.magic = config.magic
         self.genesis_sec = config.genesis_sec
         self.sender_addr = config.sender_addr
+        self.time_per_epoch = config.time_per_epoch
     def version_cmd(self, receiver_addr):
         now = datetime.now()
         utc_sec = now.strftime('%s')
@@ -34,7 +35,7 @@ class WitnetMsgHandler():
         version.capabilities = 1
         version.user_agent = b"full-node-desktop-edition".decode('utf-8')
         version.timestamp = utc_sec
-        version.last_epoch = int((utc_sec - self.genesis_sec)/45) -1
+        version.last_epoch = int((utc_sec - self.genesis_sec)/self.time_per_epoch) -1
         version.nonce = random.randint(10000000,100000000000000000) 
         
         cmd = witnet_pb2.Message.Command()

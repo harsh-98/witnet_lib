@@ -1,17 +1,28 @@
 ## Witnet Library
-This library is light client implementation for witnet node, capacible  of directly interacting with witnet node.
+This library is light client implementation for witnet node, capable  of directly interacting with witnet node.
 
 ### Features
 
-- Allows to send proto messages to witnet node.
+- Allows sending proto messages to witnet node.
 - Performs handshake with witnet node.
-- Iterate over the nodes in witnet network in a DAG(directed acyclic graph)
+- Iterates over the nodes in witnet network in a DAG(directed acyclic graph) fashion
 
 ### How to use
 Performing handshake with witnet node.
 ```python
 from witnet_lib.witnet_client import WitnetClient
-client = WitnetClient()
+from witnet_lib.utils import AttrDict
+
+# Setting config
+config = AttrDict()
+config.update({
+    "genesis_sec": 1590055200,
+    "magic": 45507,
+    "sender_addr": "127.0.0.1:21341",
+    "time_per_epoch": 45,
+})
+
+client = WitnetClient(config)
 client.handshake("127.0.0.1:21337")
 client.close()
 ```
@@ -21,14 +32,22 @@ Listening to messages from witnet node.
 #After performing handshake with node.
 msg = client.tcp_handler.receive_witnet_msg() # this returns serialized message from node
 parsed_msg = client.msg_handler.parse_msg(msg) # we need to parse the message
-print(prased_msg.kind)
+print(parsed_msg)
 print(parsed_msg.kind)
 ```
+
+The connection is of `keep alive` type, so messages are continually sent from witnet node. To listen for all messages:
+```python
+while True:
+    msg = client.tcp_handler.receive_witnet_msg() # this returns serialized message from node
+    parsed_msg = client.msg_handler.parse_msg(msg)
+    print(parsed_msg)
+``` 
 
 Sending message to witnet node.
 ```python
 #After performing handshake with node.
-cmd = client.msg_handler.version_cmd() # this returns a version message
+cmd = client.msg_handler.version_cmd("127.0.0.1:21337") # this returns a version message
 print(cmd)
 msg = client.msg_handler.serialize(cmd)# this returns serialized messsage ready to be sent to node
 client.tcp_handler.send(msg)
@@ -38,7 +57,14 @@ msg_from_node_with_msg_len = client.tcp_handler.receive(30) # this returns x byt
 
 Mapping all nodes in the network (DAG fashion)
 ```python
-from witnet_lib import map_nodes
-peers = map_nodes.start_mapping_workers(3) # number of connections allowed to be created in parallel
+from witnet_lib import map_nodes, utils
+config = utils.AttrDict()
+config.update({
+    "genesis_sec": 1590055200,
+    "magic": 45507,
+    "sender_addr": "127.0.0.1:21341",
+    "time_per_epoch": 45,
+})
+peers = map_nodes.start_mapping_workers(config, 3) # number of connections allowed to be created in parallel
 print(peers)
 ```

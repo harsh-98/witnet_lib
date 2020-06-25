@@ -3,9 +3,9 @@
 When `witnet node server` is executed, the `src/cli/node/with_node` calls the module `node/src/actor/node.rs` where all the managers are initialised. Among all managers, the most interesting one `SessionManager`.
 
 ### Structure of Witnet Modules
-There is usually `actor.rs`, `handler.rs` and `mod.rs`. 
+There are usually following files present in a module: `actor.rs`, `handler.rs` and `mod.rs`. 
 - `actor.rs` is called when a new object of module is initialised.
-- `handler.rs` is responisble for handling the messages sent to object via `do_send` function call.
+- `handler.rs` is responisble for handling the messages sent to object via `do_send` method call.
 - `module.rs` is where object struct and properties are defined.
 
 ### SessionManager

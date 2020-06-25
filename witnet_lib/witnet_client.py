@@ -1,20 +1,11 @@
 from witnet_lib.logger import log
 from witnet_lib.proto_lib.witnet_msg import WitnetMsgHandler
 from witnet_lib.tcp_handler import TCPSocket
-class AttrDict(dict):
-    def __init__(self, *args, **kwargs):
-        super(AttrDict, self).__init__(*args, **kwargs)
-        self.__dict__ = self
 
 class WitnetClient():
     
-    def __init__(self):
-        self.config = AttrDict()
-        self.config.update({
-            "genesis_sec": 1590055200,
-            "magic": 45507,
-            "sender_addr": "127.0.0.1:21341",
-        })
+    def __init__(self,config):
+        self.config = config
         self.msg_handler = WitnetMsgHandler(self.config)
 
     def handshake(self, peer_addr):

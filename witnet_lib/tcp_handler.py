@@ -39,10 +39,3 @@ class TCPSocket:
             self.sock.bind(('', port)) 
             self.sock.listen(5)
             log.info(f"Listening at {port}")
-        # while True: 
-        #     # Establish connection with client. 
-        #     c, addr = self.sock.accept()      
-        #     print('Got connection from', addr)
-        #     r= c.recv(4096) 
-        #     print("Receive <:",r)
-        #     c.close() 

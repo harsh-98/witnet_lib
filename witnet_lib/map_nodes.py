@@ -12,7 +12,7 @@ visited_nodes = set()
 # https://www.educative.io/edpresso/what-are-locks-in-python
 queue_lock = threading.Lock()
 set_lock = threading.Lock()
-def worker(worker_num):
+def worker(config, worker_num):
     log.info(f"Starting worker {worker_num}")
 
     while True:
@@ -26,7 +26,7 @@ def worker(worker_num):
         if peer in visited_nodes:
             continue
         # create client
-        client = WitnetClient()
+        client = WitnetClient(config)
         try:
             client.handshake(peer)
             peers = client.get_peers()
@@ -51,10 +51,10 @@ def worker(worker_num):
 
 
 
-def start_mapping_workers(num):
+def start_mapping_workers(config, num):
     threads = []
     for i in  range(num):
-        threads.append ( threading.Thread(target=worker, args=(i,) ) )
+        threads.append ( threading.Thread(target=worker, args=(config,i, ) ) )
     for thread in threads:
         thread.start()
 
