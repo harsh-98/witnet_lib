@@ -1,4 +1,5 @@
-from witnet_lib import map_nodes, utils
+from witnet_lib.map_nodes import MapNodes
+from witnet_lib import utils
 
 if __name__ == "__main__":
     config = utils.AttrDict()
@@ -8,5 +9,6 @@ if __name__ == "__main__":
         "sender_addr": "127.0.0.1:21341",
         "time_per_epoch": 45,
     })
-    all_nodes = map_nodes.start_mapping_workers(config, 3)
+    mapper = MapNodes(config, ["127.0.0.1:21337"])
+    all_nodes = mapper.start_mapping_workers(3)
     print(all_nodes)

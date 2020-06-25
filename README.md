@@ -57,7 +57,8 @@ msg_from_node_with_msg_len = client.tcp_handler.receive(30) # this returns x byt
 
 Mapping all nodes in the network (DAG fashion)
 ```python
-from witnet_lib import map_nodes, utils
+from witnet_lib import utils
+from witnet_lib.map_nodes  import MapNodes
 config = utils.AttrDict()
 config.update({
     "genesis_sec": 1590055200,
@@ -65,6 +66,8 @@ config.update({
     "sender_addr": "127.0.0.1:21341",
     "time_per_epoch": 45,
 })
-peers = map_nodes.start_mapping_workers(config, 3) # number of connections allowed to be created in parallel
-print(peers)
+
+mapper = MapNodes(config, ["127.0.0.1:21337"]) # provide initialisation peers
+all_nodes = mapper.start_mapping_workers(3) # number of connections allowed to be created in parallel
+print(all_nodes)
 ```
