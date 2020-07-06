@@ -68,6 +68,7 @@ config.update({
 })
 
 mapper = MapNodes(config, ["127.0.0.1:21337"]) # provide initialisation peers
-all_nodes = mapper.start_mapping_workers(3) # number of connections allowed to be created in parallel
+all_nodes, active_map = mapper.start_mapping_workers(3) # number of connections allowed to be created in parallel
 print(all_nodes)
+print(active_map) # it contains node id with the list of its peers
 ```
