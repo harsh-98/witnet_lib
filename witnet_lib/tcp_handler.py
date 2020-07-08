@@ -31,6 +31,8 @@ class TCPSocket:
             self.sock.send(msg)
 
     def receive(self, length=4096):
+        if self.sock.fileno() == -1:
+            self.connect(self.node_addr)
         msg = self.sock.recv(length)
         log.debug(f"Receiving [<] {msg}")
         return msg

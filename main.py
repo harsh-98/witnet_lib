@@ -2,8 +2,7 @@ from witnet_lib.map_nodes import MapNodes
 from witnet_lib import utils
 
 if __name__ == "__main__":
-    config = utils.AttrDict()
-    config.update({
+    config = utils.AttrDict({
         "genesis_sec": 1592996400,
         "magic": 36162,
         "sender_addr": "127.0.0.1:21341",
