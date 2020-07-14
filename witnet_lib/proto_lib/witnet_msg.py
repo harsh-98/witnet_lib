@@ -3,14 +3,16 @@ import random
 from witnet_lib.proto_lib import witnet_pb2
 from witnet_lib.logger import log
 
+
 def byte_ip(addr):
     ip, port = addr.split(":")
     port = int(port)
     ip = [int(i) for i in ip.split(".")]
     # print(hex(port))
-    port =  list(bytes.fromhex(hex(port)[2:]))
+    port = list(bytes.fromhex(hex(port)[2:]))
     l = ip+port
     return bytes(l)
+
 
 class WitnetMsgHandler():
     def __init__(self, config):
@@ -18,11 +20,14 @@ class WitnetMsgHandler():
         self.genesis_sec = config.genesis_sec
         self.sender_addr = config.sender_addr
         self.time_per_epoch = config.time_per_epoch
+        self.last_block = [
+            0, "0000000000000000000000000000000000000000000000000000000000000000"]
+
     def version_cmd(self, receiver_addr):
         now = datetime.now()
         utc_sec = now.strftime('%s')
         utc_sec = int(utc_sec)
-        
+        # self.last_block = last_block
         rece_addr_msg = witnet_pb2.Address()
 
         rece_addr_msg.address = byte_ip(self.sender_addr)
@@ -31,17 +36,38 @@ class WitnetMsgHandler():
         version = witnet_pb2.Version()
         version.sender_address.CopyFrom(send_addr_msg)
         version.receiver_address.CopyFrom(rece_addr_msg)
-        version.version = 1 
+        version.version = 1
         version.capabilities = 1
         version.user_agent = b"full-node-desktop-edition".decode('utf-8')
         version.timestamp = utc_sec
-        version.last_epoch = int((utc_sec - self.genesis_sec)/self.time_per_epoch) -1
-        version.nonce = random.randint(10000000,100000000000000000) 
-        
+        # version.last_epoch = int(
+        #     (utc_sec - self.genesis_sec)/self.time_per_epoch) - 1
+        version.beacon.CopyFrom(self.last_beacon_msg())
+        version.nonce = random.randint(10000000, 100000000000000000)
+
         cmd = witnet_pb2.Message.Command()
         cmd.Version.CopyFrom(version)
         return cmd
-    
+
+    def last_beacon_msg(self):
+        beacon = witnet_pb2.LastBeacon()
+        beacon.highest_block_checkpoint.CopyFrom(self.last_block_msg())
+        beacon.highest_superblock_checkpoint.CopyFrom(self.last_block_msg())
+        return beacon
+
+    def last_block_msg(self):
+        last_block = witnet_pb2.CheckpointBeacon()
+        last_block.checkpoint = self.last_block[0]
+        hash_hex = self.hash_msg(self.last_block[1])
+        last_block.hash_prev_block.CopyFrom(hash_hex)
+        return last_block
+
+    def hash_msg(self, hash_hex):
+        hash_byte = bytes.fromhex(hash_hex)
+        _hash = witnet_pb2.Hash()
+        _hash.SHA256 = hash_byte
+        return _hash
+
     def verack_cmd(self):
         verack = witnet_pb2.Verack()
         cmd = witnet_pb2.Message.Command()
@@ -69,7 +95,7 @@ class WitnetMsgHandler():
         msg.ParseFromString(rece_bytes)
         log.debug(msg)
         return msg
-    
+
     def parse_peers(self, msg):
         peers = []
         if msg.kind.HasField("Peers"):
@@ -82,7 +108,5 @@ class WitnetMsgHandler():
                 port = int.from_bytes(port, byteorder='big')
 
                 peers.append(f"{ip}:{port}")
-        
+
         return peers
-        
-        

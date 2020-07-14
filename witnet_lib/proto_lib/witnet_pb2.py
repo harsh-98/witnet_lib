@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0cwitnet.proto\x12\x06witnet\"\xfd\x03\n\x07Message\x12\r\n\x05magic\x18\x01 \x01(\r\x12%\n\x04kind\x18\x02 \x01(\x0b\x32\x17.witnet.Message.Command\x1a\xbb\x03\n\x07\x43ommand\x12\"\n\x07Version\x18\x01 \x01(\x0b\x32\x0f.witnet.VersionH\x00\x12 \n\x06Verack\x18\x02 \x01(\x0b\x32\x0e.witnet.VerackH\x00\x12$\n\x08GetPeers\x18\x03 \x01(\x0b\x32\x10.witnet.GetPeersH\x00\x12\x1e\n\x05Peers\x18\x04 \x01(\x0b\x32\r.witnet.PeersH\x00\x12\x1e\n\x05\x42lock\x18\x05 \x01(\x0b\x32\r.witnet.BlockH\x00\x12>\n\x15InventoryAnnouncement\x18\x06 \x01(\x0b\x32\x1d.witnet.InventoryAnnouncementH\x00\x12\x34\n\x10InventoryRequest\x18\x07 \x01(\x0b\x32\x18.witnet.InventoryRequestH\x00\x12(\n\nLastBeacon\x18\x08 \x01(\x0b\x32\x12.witnet.LastBeaconH\x00\x12*\n\x0bTransaction\x18\t \x01(\x0b\x32\x13.witnet.TransactionH\x00\x12\x30\n\x0eSuperBlockVote\x18\n \x01(\x0b\x32\x16.witnet.SuperBlockVoteH\x00\x42\x06\n\x04kind\"\xce\x01\n\x07Version\x12\x0f\n\x07version\x18\x01 \x01(\r\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x14\n\x0c\x63\x61pabilities\x18\x03 \x01(\x06\x12\'\n\x0esender_address\x18\x04 \x01(\x0b\x32\x0f.witnet.Address\x12)\n\x10receiver_address\x18\x05 \x01(\x0b\x32\x0f.witnet.Address\x12\x12\n\nuser_agent\x18\x06 \x01(\t\x12\x12\n\nlast_epoch\x18\x07 \x01(\x07\x12\r\n\x05nonce\x18\x08 \x01(\x06\"\x08\n\x06Verack\"\n\n\x08GetPeers\"\'\n\x05Peers\x12\x1e\n\x05peers\x18\x01 \x03(\x0b\x32\x0f.witnet.Address\"\x88\x08\n\x05\x42lock\x12/\n\x0c\x62lock_header\x18\x01 \x01(\x0b\x32\x19.witnet.Block.BlockHeader\x12)\n\tblock_sig\x18\x02 \x01(\x0b\x32\x16.witnet.KeyedSignature\x12-\n\x04txns\x18\x03 \x01(\x0b\x32\x1f.witnet.Block.BlockTransactions\x1a\x38\n\x15\x42lockEligibilityClaim\x12\x1f\n\x05proof\x18\x01 \x01(\x0b\x32\x10.witnet.VrfProof\x1a\x88\x04\n\x0b\x42lockHeader\x12\x0f\n\x07version\x18\x01 \x01(\r\x12(\n\x06\x62\x65\x61\x63on\x18\x02 \x01(\x0b\x32\x18.witnet.CheckpointBeacon\x12@\n\x0cmerkle_roots\x18\x03 \x01(\x0b\x32*.witnet.Block.BlockHeader.BlockMerkleRoots\x12\x32\n\x05proof\x18\x04 \x01(\x0b\x32#.witnet.Block.BlockEligibilityClaim\x12\x30\n\x10\x62n256_public_key\x18\x05 \x01(\x0b\x32\x16.witnet.Bn256PublicKey\x1a\x95\x02\n\x10\x42lockMerkleRoots\x12\x1f\n\tmint_hash\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12)\n\x13vt_hash_merkle_root\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\x12)\n\x13\x64r_hash_merkle_root\x18\x03 \x01(\x0b\x32\x0c.witnet.Hash\x12-\n\x17\x63ommit_hash_merkle_root\x18\x04 \x01(\x0b\x32\x0c.witnet.Hash\x12-\n\x17reveal_hash_merkle_root\x18\x05 \x01(\x0b\x32\x0c.witnet.Hash\x12,\n\x16tally_hash_merkle_root\x18\x06 \x01(\x0b\x32\x0c.witnet.Hash\x1a\xae\x02\n\x11\x42lockTransactions\x12%\n\x04mint\x18\x01 \x01(\x0b\x32\x17.witnet.MintTransaction\x12\x32\n\x13value_transfer_txns\x18\x02 \x03(\x0b\x32\x15.witnet.VTTransaction\x12\x30\n\x11\x64\x61ta_request_txns\x18\x03 \x03(\x0b\x32\x15.witnet.DRTransaction\x12.\n\x0b\x63ommit_txns\x18\x04 \x03(\x0b\x32\x19.witnet.CommitTransaction\x12.\n\x0breveal_txns\x18\x05 \x03(\x0b\x32\x19.witnet.RevealTransaction\x12,\n\ntally_txns\x18\x06 \x03(\x0b\x32\x18.witnet.TallyTransaction\"B\n\x15InventoryAnnouncement\x12)\n\tinventory\x18\x01 \x03(\x0b\x32\x16.witnet.InventoryEntry\"=\n\x10InventoryRequest\x12)\n\tinventory\x18\x01 \x03(\x0b\x32\x16.witnet.InventoryEntry\"H\n\nLastBeacon\x12:\n\x18highest_block_checkpoint\x18\x01 \x01(\x0b\x32\x18.witnet.CheckpointBeacon\"K\n\rOutputPointer\x12$\n\x0etransaction_id\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12\x14\n\x0coutput_index\x18\x02 \x01(\r\"[\n\x13ValueTransferOutput\x12\"\n\x03pkh\x18\x01 \x01(\x0b\x32\x15.witnet.PublicKeyHash\x12\r\n\x05value\x18\x02 \x01(\x04\x12\x11\n\ttime_lock\x18\x03 \x01(\x04\"\xbc\x06\n\x11\x44\x61taRequestOutput\x12:\n\x0c\x64\x61ta_request\x18\x01 \x01(\x0b\x32$.witnet.DataRequestOutput.RADRequest\x12\x16\n\x0ewitness_reward\x18\x02 \x01(\x04\x12\x11\n\twitnesses\x18\x03 \x01(\r\x12\x12\n\ncommit_fee\x18\x04 \x01(\x04\x12\x12\n\nreveal_fee\x18\x05 \x01(\x04\x12\x11\n\ttally_fee\x18\x06 \x01(\x04\x12 \n\x18min_consensus_percentage\x18\x07 \x01(\r\x12\x12\n\ncollateral\x18\x08 \x01(\x04\x1a\xce\x04\n\nRADRequest\x12\x11\n\ttime_lock\x18\x01 \x01(\x04\x12\x42\n\x08retrieve\x18\x02 \x03(\x0b\x32\x30.witnet.DataRequestOutput.RADRequest.RADRetrieve\x12\x44\n\taggregate\x18\x03 \x01(\x0b\x32\x31.witnet.DataRequestOutput.RADRequest.RADAggregate\x12<\n\x05tally\x18\x04 \x01(\x0b\x32-.witnet.DataRequestOutput.RADRequest.RADTally\x1a%\n\tRADFilter\x12\n\n\x02op\x18\x01 \x01(\r\x12\x0c\n\x04\x61rgs\x18\x02 \x01(\x0c\x1a\x66\n\x0bRADRetrieve\x12:\n\x04kind\x18\x01 \x01(\x0e\x32,.witnet.DataRequestOutput.RADRequest.RADType\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0e\n\x06script\x18\x03 \x01(\x0c\x1a`\n\x0cRADAggregate\x12?\n\x07\x66ilters\x18\x01 \x03(\x0b\x32..witnet.DataRequestOutput.RADRequest.RADFilter\x12\x0f\n\x07reducer\x18\x02 \x01(\r\x1a\\\n\x08RADTally\x12?\n\x07\x66ilters\x18\x01 \x03(\x0b\x32..witnet.DataRequestOutput.RADRequest.RADFilter\x12\x0f\n\x07reducer\x18\x02 \x01(\r\"\x16\n\x07RADType\x12\x0b\n\x07HttpGet\x10\x00\"6\n\x05Input\x12-\n\x0eoutput_pointer\x18\x01 \x01(\x0b\x32\x15.witnet.OutputPointer\"`\n\x11VTTransactionBody\x12\x1d\n\x06inputs\x18\x01 \x03(\x0b\x32\r.witnet.Input\x12,\n\x07outputs\x18\x02 \x03(\x0b\x32\x1b.witnet.ValueTransferOutput\"d\n\rVTTransaction\x12\'\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x19.witnet.VTTransactionBody\x12*\n\nsignatures\x18\x02 \x03(\x0b\x32\x16.witnet.KeyedSignature\"\x8e\x01\n\x11\x44RTransactionBody\x12\x1d\n\x06inputs\x18\x01 \x03(\x0b\x32\r.witnet.Input\x12,\n\x07outputs\x18\x02 \x03(\x0b\x32\x1b.witnet.ValueTransferOutput\x12,\n\tdr_output\x18\x03 \x01(\x0b\x32\x19.witnet.DataRequestOutput\"d\n\rDRTransaction\x12\'\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x19.witnet.DRTransactionBody\x12*\n\nsignatures\x18\x02 \x03(\x0b\x32\x16.witnet.KeyedSignature\"\x92\x02\n\x15\x43ommitTransactionBody\x12 \n\ndr_pointer\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12 \n\ncommitment\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\x12\x32\n\x05proof\x18\x03 \x01(\x0b\x32#.witnet.DataRequestEligibilityClaim\x12!\n\ncollateral\x18\x04 \x03(\x0b\x32\r.witnet.Input\x12,\n\x07outputs\x18\x05 \x03(\x0b\x32\x1b.witnet.ValueTransferOutput\x12\x30\n\x10\x62n256_public_key\x18\x06 \x01(\x0b\x32\x16.witnet.Bn256PublicKey\"l\n\x11\x43ommitTransaction\x12+\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x1d.witnet.CommitTransactionBody\x12*\n\nsignatures\x18\x02 \x03(\x0b\x32\x16.witnet.KeyedSignature\"m\n\x15RevealTransactionBody\x12 \n\ndr_pointer\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12\x0e\n\x06reveal\x18\x02 \x01(\x0c\x12\"\n\x03pkh\x18\x03 \x01(\x0b\x32\x15.witnet.PublicKeyHash\"l\n\x11RevealTransaction\x12+\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x1d.witnet.RevealTransactionBody\x12*\n\nsignatures\x18\x02 \x03(\x0b\x32\x16.witnet.KeyedSignature\"\xd3\x01\n\x10TallyTransaction\x12 \n\ndr_pointer\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12\r\n\x05tally\x18\x02 \x01(\x0c\x12,\n\x07outputs\x18\x03 \x03(\x0b\x32\x1b.witnet.ValueTransferOutput\x12/\n\x10out_of_consensus\x18\x04 \x03(\x0b\x32\x15.witnet.PublicKeyHash\x12/\n\x10\x65rror_committers\x18\x05 \x03(\x0b\x32\x15.witnet.PublicKeyHash\"N\n\x0fMintTransaction\x12\r\n\x05\x65poch\x18\x01 \x01(\x07\x12,\n\x07outputs\x18\x02 \x03(\x0b\x32\x1b.witnet.ValueTransferOutput\"\xa1\x02\n\x0bTransaction\x12.\n\rValueTransfer\x18\x01 \x01(\x0b\x32\x15.witnet.VTTransactionH\x00\x12,\n\x0b\x44\x61taRequest\x18\x02 \x01(\x0b\x32\x15.witnet.DRTransactionH\x00\x12+\n\x06\x43ommit\x18\x03 \x01(\x0b\x32\x19.witnet.CommitTransactionH\x00\x12+\n\x06Reveal\x18\x04 \x01(\x0b\x32\x19.witnet.RevealTransactionH\x00\x12)\n\x05Tally\x18\x05 \x01(\x0b\x32\x18.witnet.TallyTransactionH\x00\x12\'\n\x04Mint\x18\x06 \x01(\x0b\x32\x17.witnet.MintTransactionH\x00\x42\x06\n\x04kind\" \n\x04Hash\x12\x10\n\x06SHA256\x18\x01 \x01(\x0cH\x00\x42\x06\n\x04kind\"!\n\x12Secp256k1Signature\x12\x0b\n\x03\x64\x65r\x18\x01 \x01(\x0c\"D\n\tSignature\x12/\n\tSecp256k1\x18\x01 \x01(\x0b\x32\x1a.witnet.Secp256k1SignatureH\x00\x42\x06\n\x04kind\"#\n\x0e\x42n256Signature\x12\x11\n\tsignature\x18\x01 \x01(\x0c\"\x1f\n\tPublicKey\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\"$\n\x0e\x42n256PublicKey\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\"\x1d\n\rPublicKeyHash\x12\x0c\n\x04hash\x18\x01 \x01(\x0c\"]\n\x0eKeyedSignature\x12$\n\tsignature\x18\x01 \x01(\x0b\x32\x11.witnet.Signature\x12%\n\npublic_key\x18\x02 \x01(\x0b\x32\x11.witnet.PublicKey\"l\n\x13\x42n256KeyedSignature\x12)\n\tsignature\x18\x01 \x01(\x0b\x32\x16.witnet.Bn256Signature\x12*\n\npublic_key\x18\x02 \x01(\x0b\x32\x16.witnet.Bn256PublicKey\"\x1a\n\x07\x41\x64\x64ress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\"M\n\x10\x43heckpointBeacon\x12\x12\n\ncheckpoint\x18\x01 \x01(\x07\x12%\n\x0fhash_prev_block\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\"H\n\rCheckpointVRF\x12\x12\n\ncheckpoint\x18\x01 \x01(\x07\x12#\n\rhash_prev_vrf\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\"S\n\x0eInventoryEntry\x12\x1d\n\x05\x42lock\x18\x01 \x01(\x0b\x32\x0c.witnet.HashH\x00\x12\x1a\n\x02Tx\x18\x02 \x01(\x0b\x32\x0c.witnet.HashH\x00\x42\x06\n\x04kind\"\x83\x04\n\x12\x43onsensusConstants\x12!\n\x19\x63heckpoint_zero_timestamp\x18\x01 \x01(\x03\x12\x1a\n\x12\x63heckpoints_period\x18\x02 \x01(\r\x12$\n\x0e\x62ootstrap_hash\x18\x03 \x01(\x0b\x32\x0c.witnet.Hash\x12\"\n\x0cgenesis_hash\x18\x04 \x01(\x0b\x32\x0c.witnet.Hash\x12\x18\n\x10max_block_weight\x18\x05 \x01(\r\x12\x17\n\x0f\x61\x63tivity_period\x18\x06 \x01(\r\x12$\n\x1creputation_expire_alpha_diff\x18\x07 \x01(\r\x12\x1b\n\x13reputation_issuance\x18\x08 \x01(\r\x12 \n\x18reputation_issuance_stop\x18\t \x01(\r\x12&\n\x1ereputation_penalization_factor\x18\n \x01(\x01\x12\x1c\n\x14mining_backup_factor\x18\x0b \x01(\r\x12!\n\x19mining_replication_factor\x18\x0c \x01(\r\x12\x1a\n\x12\x63ollateral_minimum\x18\r \x01(\x04\x12\x16\n\x0e\x63ollateral_age\x18\x0e \x01(\r\x12\x19\n\x11superblock_period\x18\x0f \x01(\r\x12\x14\n\x0c\x65xtra_rounds\x18\x10 \x01(\r\"@\n\x08VrfProof\x12\r\n\x05proof\x18\x01 \x01(\x0c\x12%\n\npublic_key\x18\x02 \x01(\x0b\x32\x11.witnet.PublicKey\"`\n\x15\x44\x61taRequestVrfMessage\x12(\n\tvrf_input\x18\x01 \x01(\x0b\x32\x15.witnet.CheckpointVRF\x12\x1d\n\x07\x64r_hash\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\">\n\x1b\x44\x61taRequestEligibilityClaim\x12\x1f\n\x05proof\x18\x01 \x01(\x0b\x32\x10.witnet.VrfProof\"\xe1\x01\n\nSuperBlock\x12\x1e\n\x08\x61rs_root\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12\'\n\x11\x64\x61ta_request_root\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\x12\r\n\x05index\x18\x03 \x01(\r\x12 \n\nlast_block\x18\x04 \x01(\x0b\x32\x0c.witnet.Hash\x12\x37\n!last_block_in_previous_superblock\x18\x05 \x01(\x0b\x32\x0c.witnet.Hash\x12 \n\ntally_root\x18\x06 \x01(\x0b\x32\x0c.witnet.Hash\"\xb7\x01\n\x0eSuperBlockVote\x12/\n\x0f\x62n256_signature\x18\x01 \x01(\x0b\x32\x16.witnet.Bn256Signature\x12\x33\n\x13secp256k1_signature\x18\x02 \x01(\x0b\x32\x16.witnet.KeyedSignature\x12%\n\x0fsuperblock_hash\x18\x03 \x01(\x0b\x32\x0c.witnet.Hash\x12\x18\n\x10superblock_index\x18\x04 \x01(\x07\x62\x06proto3'
+  serialized_pb=b'\n\x0cwitnet.proto\x12\x06witnet\"\xfd\x03\n\x07Message\x12\r\n\x05magic\x18\x01 \x01(\r\x12%\n\x04kind\x18\x02 \x01(\x0b\x32\x17.witnet.Message.Command\x1a\xbb\x03\n\x07\x43ommand\x12\"\n\x07Version\x18\x01 \x01(\x0b\x32\x0f.witnet.VersionH\x00\x12 \n\x06Verack\x18\x02 \x01(\x0b\x32\x0e.witnet.VerackH\x00\x12$\n\x08GetPeers\x18\x03 \x01(\x0b\x32\x10.witnet.GetPeersH\x00\x12\x1e\n\x05Peers\x18\x04 \x01(\x0b\x32\r.witnet.PeersH\x00\x12\x1e\n\x05\x42lock\x18\x05 \x01(\x0b\x32\r.witnet.BlockH\x00\x12>\n\x15InventoryAnnouncement\x18\x06 \x01(\x0b\x32\x1d.witnet.InventoryAnnouncementH\x00\x12\x34\n\x10InventoryRequest\x18\x07 \x01(\x0b\x32\x18.witnet.InventoryRequestH\x00\x12(\n\nLastBeacon\x18\x08 \x01(\x0b\x32\x12.witnet.LastBeaconH\x00\x12*\n\x0bTransaction\x18\t \x01(\x0b\x32\x13.witnet.TransactionH\x00\x12\x30\n\x0eSuperBlockVote\x18\n \x01(\x0b\x32\x16.witnet.SuperBlockVoteH\x00\x42\x06\n\x04kind\"\xde\x01\n\x07Version\x12\x0f\n\x07version\x18\x01 \x01(\r\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x14\n\x0c\x63\x61pabilities\x18\x03 \x01(\x06\x12\'\n\x0esender_address\x18\x04 \x01(\x0b\x32\x0f.witnet.Address\x12)\n\x10receiver_address\x18\x05 \x01(\x0b\x32\x0f.witnet.Address\x12\x12\n\nuser_agent\x18\x06 \x01(\t\x12\r\n\x05nonce\x18\x07 \x01(\x06\x12\"\n\x06\x62\x65\x61\x63on\x18\x08 \x01(\x0b\x32\x12.witnet.LastBeacon\"\x08\n\x06Verack\"\n\n\x08GetPeers\"\'\n\x05Peers\x12\x1e\n\x05peers\x18\x01 \x03(\x0b\x32\x0f.witnet.Address\"\x88\x08\n\x05\x42lock\x12/\n\x0c\x62lock_header\x18\x01 \x01(\x0b\x32\x19.witnet.Block.BlockHeader\x12)\n\tblock_sig\x18\x02 \x01(\x0b\x32\x16.witnet.KeyedSignature\x12-\n\x04txns\x18\x03 \x01(\x0b\x32\x1f.witnet.Block.BlockTransactions\x1a\x38\n\x15\x42lockEligibilityClaim\x12\x1f\n\x05proof\x18\x01 \x01(\x0b\x32\x10.witnet.VrfProof\x1a\x88\x04\n\x0b\x42lockHeader\x12\x0f\n\x07version\x18\x01 \x01(\r\x12(\n\x06\x62\x65\x61\x63on\x18\x02 \x01(\x0b\x32\x18.witnet.CheckpointBeacon\x12@\n\x0cmerkle_roots\x18\x03 \x01(\x0b\x32*.witnet.Block.BlockHeader.BlockMerkleRoots\x12\x32\n\x05proof\x18\x04 \x01(\x0b\x32#.witnet.Block.BlockEligibilityClaim\x12\x30\n\x10\x62n256_public_key\x18\x05 \x01(\x0b\x32\x16.witnet.Bn256PublicKey\x1a\x95\x02\n\x10\x42lockMerkleRoots\x12\x1f\n\tmint_hash\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12)\n\x13vt_hash_merkle_root\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\x12)\n\x13\x64r_hash_merkle_root\x18\x03 \x01(\x0b\x32\x0c.witnet.Hash\x12-\n\x17\x63ommit_hash_merkle_root\x18\x04 \x01(\x0b\x32\x0c.witnet.Hash\x12-\n\x17reveal_hash_merkle_root\x18\x05 \x01(\x0b\x32\x0c.witnet.Hash\x12,\n\x16tally_hash_merkle_root\x18\x06 \x01(\x0b\x32\x0c.witnet.Hash\x1a\xae\x02\n\x11\x42lockTransactions\x12%\n\x04mint\x18\x01 \x01(\x0b\x32\x17.witnet.MintTransaction\x12\x32\n\x13value_transfer_txns\x18\x02 \x03(\x0b\x32\x15.witnet.VTTransaction\x12\x30\n\x11\x64\x61ta_request_txns\x18\x03 \x03(\x0b\x32\x15.witnet.DRTransaction\x12.\n\x0b\x63ommit_txns\x18\x04 \x03(\x0b\x32\x19.witnet.CommitTransaction\x12.\n\x0breveal_txns\x18\x05 \x03(\x0b\x32\x19.witnet.RevealTransaction\x12,\n\ntally_txns\x18\x06 \x03(\x0b\x32\x18.witnet.TallyTransaction\"B\n\x15InventoryAnnouncement\x12)\n\tinventory\x18\x01 \x03(\x0b\x32\x16.witnet.InventoryEntry\"=\n\x10InventoryRequest\x12)\n\tinventory\x18\x01 \x03(\x0b\x32\x16.witnet.InventoryEntry\"\x89\x01\n\nLastBeacon\x12:\n\x18highest_block_checkpoint\x18\x01 \x01(\x0b\x32\x18.witnet.CheckpointBeacon\x12?\n\x1dhighest_superblock_checkpoint\x18\x02 \x01(\x0b\x32\x18.witnet.CheckpointBeacon\"K\n\rOutputPointer\x12$\n\x0etransaction_id\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12\x14\n\x0coutput_index\x18\x02 \x01(\r\"[\n\x13ValueTransferOutput\x12\"\n\x03pkh\x18\x01 \x01(\x0b\x32\x15.witnet.PublicKeyHash\x12\r\n\x05value\x18\x02 \x01(\x04\x12\x11\n\ttime_lock\x18\x03 \x01(\x04\"\xbc\x06\n\x11\x44\x61taRequestOutput\x12:\n\x0c\x64\x61ta_request\x18\x01 \x01(\x0b\x32$.witnet.DataRequestOutput.RADRequest\x12\x16\n\x0ewitness_reward\x18\x02 \x01(\x04\x12\x11\n\twitnesses\x18\x03 \x01(\r\x12\x12\n\ncommit_fee\x18\x04 \x01(\x04\x12\x12\n\nreveal_fee\x18\x05 \x01(\x04\x12\x11\n\ttally_fee\x18\x06 \x01(\x04\x12 \n\x18min_consensus_percentage\x18\x07 \x01(\r\x12\x12\n\ncollateral\x18\x08 \x01(\x04\x1a\xce\x04\n\nRADRequest\x12\x11\n\ttime_lock\x18\x01 \x01(\x04\x12\x42\n\x08retrieve\x18\x02 \x03(\x0b\x32\x30.witnet.DataRequestOutput.RADRequest.RADRetrieve\x12\x44\n\taggregate\x18\x03 \x01(\x0b\x32\x31.witnet.DataRequestOutput.RADRequest.RADAggregate\x12<\n\x05tally\x18\x04 \x01(\x0b\x32-.witnet.DataRequestOutput.RADRequest.RADTally\x1a%\n\tRADFilter\x12\n\n\x02op\x18\x01 \x01(\r\x12\x0c\n\x04\x61rgs\x18\x02 \x01(\x0c\x1a\x66\n\x0bRADRetrieve\x12:\n\x04kind\x18\x01 \x01(\x0e\x32,.witnet.DataRequestOutput.RADRequest.RADType\x12\x0b\n\x03url\x18\x02 \x01(\t\x12\x0e\n\x06script\x18\x03 \x01(\x0c\x1a`\n\x0cRADAggregate\x12?\n\x07\x66ilters\x18\x01 \x03(\x0b\x32..witnet.DataRequestOutput.RADRequest.RADFilter\x12\x0f\n\x07reducer\x18\x02 \x01(\r\x1a\\\n\x08RADTally\x12?\n\x07\x66ilters\x18\x01 \x03(\x0b\x32..witnet.DataRequestOutput.RADRequest.RADFilter\x12\x0f\n\x07reducer\x18\x02 \x01(\r\"\x16\n\x07RADType\x12\x0b\n\x07HttpGet\x10\x00\"6\n\x05Input\x12-\n\x0eoutput_pointer\x18\x01 \x01(\x0b\x32\x15.witnet.OutputPointer\"`\n\x11VTTransactionBody\x12\x1d\n\x06inputs\x18\x01 \x03(\x0b\x32\r.witnet.Input\x12,\n\x07outputs\x18\x02 \x03(\x0b\x32\x1b.witnet.ValueTransferOutput\"d\n\rVTTransaction\x12\'\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x19.witnet.VTTransactionBody\x12*\n\nsignatures\x18\x02 \x03(\x0b\x32\x16.witnet.KeyedSignature\"\x8e\x01\n\x11\x44RTransactionBody\x12\x1d\n\x06inputs\x18\x01 \x03(\x0b\x32\r.witnet.Input\x12,\n\x07outputs\x18\x02 \x03(\x0b\x32\x1b.witnet.ValueTransferOutput\x12,\n\tdr_output\x18\x03 \x01(\x0b\x32\x19.witnet.DataRequestOutput\"d\n\rDRTransaction\x12\'\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x19.witnet.DRTransactionBody\x12*\n\nsignatures\x18\x02 \x03(\x0b\x32\x16.witnet.KeyedSignature\"\x92\x02\n\x15\x43ommitTransactionBody\x12 \n\ndr_pointer\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12 \n\ncommitment\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\x12\x32\n\x05proof\x18\x03 \x01(\x0b\x32#.witnet.DataRequestEligibilityClaim\x12!\n\ncollateral\x18\x04 \x03(\x0b\x32\r.witnet.Input\x12,\n\x07outputs\x18\x05 \x03(\x0b\x32\x1b.witnet.ValueTransferOutput\x12\x30\n\x10\x62n256_public_key\x18\x06 \x01(\x0b\x32\x16.witnet.Bn256PublicKey\"l\n\x11\x43ommitTransaction\x12+\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x1d.witnet.CommitTransactionBody\x12*\n\nsignatures\x18\x02 \x03(\x0b\x32\x16.witnet.KeyedSignature\"m\n\x15RevealTransactionBody\x12 \n\ndr_pointer\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12\x0e\n\x06reveal\x18\x02 \x01(\x0c\x12\"\n\x03pkh\x18\x03 \x01(\x0b\x32\x15.witnet.PublicKeyHash\"l\n\x11RevealTransaction\x12+\n\x04\x62ody\x18\x01 \x01(\x0b\x32\x1d.witnet.RevealTransactionBody\x12*\n\nsignatures\x18\x02 \x03(\x0b\x32\x16.witnet.KeyedSignature\"\xd3\x01\n\x10TallyTransaction\x12 \n\ndr_pointer\x18\x01 \x01(\x0b\x32\x0c.witnet.Hash\x12\r\n\x05tally\x18\x02 \x01(\x0c\x12,\n\x07outputs\x18\x03 \x03(\x0b\x32\x1b.witnet.ValueTransferOutput\x12/\n\x10out_of_consensus\x18\x04 \x03(\x0b\x32\x15.witnet.PublicKeyHash\x12/\n\x10\x65rror_committers\x18\x05 \x03(\x0b\x32\x15.witnet.PublicKeyHash\"N\n\x0fMintTransaction\x12\r\n\x05\x65poch\x18\x01 \x01(\x07\x12,\n\x07outputs\x18\x02 \x03(\x0b\x32\x1b.witnet.ValueTransferOutput\"\xa1\x02\n\x0bTransaction\x12.\n\rValueTransfer\x18\x01 \x01(\x0b\x32\x15.witnet.VTTransactionH\x00\x12,\n\x0b\x44\x61taRequest\x18\x02 \x01(\x0b\x32\x15.witnet.DRTransactionH\x00\x12+\n\x06\x43ommit\x18\x03 \x01(\x0b\x32\x19.witnet.CommitTransactionH\x00\x12+\n\x06Reveal\x18\x04 \x01(\x0b\x32\x19.witnet.RevealTransactionH\x00\x12)\n\x05Tally\x18\x05 \x01(\x0b\x32\x18.witnet.TallyTransactionH\x00\x12\'\n\x04Mint\x18\x06 \x01(\x0b\x32\x17.witnet.MintTransactionH\x00\x42\x06\n\x04kind\" \n\x04Hash\x12\x10\n\x06SHA256\x18\x01 \x01(\x0cH\x00\x42\x06\n\x04kind\"!\n\x12Secp256k1Signature\x12\x0b\n\x03\x64\x65r\x18\x01 \x01(\x0c\"D\n\tSignature\x12/\n\tSecp256k1\x18\x01 \x01(\x0b\x32\x1a.witnet.Secp256k1SignatureH\x00\x42\x06\n\x04kind\"#\n\x0e\x42n256Signature\x12\x11\n\tsignature\x18\x01 \x01(\x0c\"\x1f\n\tPublicKey\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\"$\n\x0e\x42n256PublicKey\x12\x12\n\npublic_key\x18\x01 \x01(\x0c\"\x1d\n\rPublicKeyHash\x12\x0c\n\x04hash\x18\x01 \x01(\x0c\"]\n\x0eKeyedSignature\x12$\n\tsignature\x18\x01 \x01(\x0b\x32\x11.witnet.Signature\x12%\n\npublic_key\x18\x02 \x01(\x0b\x32\x11.witnet.PublicKey\"l\n\x13\x42n256KeyedSignature\x12)\n\tsignature\x18\x01 \x01(\x0b\x32\x16.witnet.Bn256Signature\x12*\n\npublic_key\x18\x02 \x01(\x0b\x32\x16.witnet.Bn256PublicKey\"\x1a\n\x07\x41\x64\x64ress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\x0c\"M\n\x10\x43heckpointBeacon\x12\x12\n\ncheckpoint\x18\x01 \x01(\x07\x12%\n\x0fhash_prev_block\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\"H\n\rCheckpointVRF\x12\x12\n\ncheckpoint\x18\x01 \x01(\x07\x12#\n\rhash_prev_vrf\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\"S\n\x0eInventoryEntry\x12\x1d\n\x05\x42lock\x18\x01 \x01(\x0b\x32\x0c.witnet.HashH\x00\x12\x1a\n\x02Tx\x18\x02 \x01(\x0b\x32\x0c.witnet.HashH\x00\x42\x06\n\x04kind\"\xdb\x04\n\x12\x43onsensusConstants\x12!\n\x19\x63heckpoint_zero_timestamp\x18\x01 \x01(\x03\x12\x1a\n\x12\x63heckpoints_period\x18\x02 \x01(\r\x12$\n\x0e\x62ootstrap_hash\x18\x03 \x01(\x0b\x32\x0c.witnet.Hash\x12\"\n\x0cgenesis_hash\x18\x04 \x01(\x0b\x32\x0c.witnet.Hash\x12\x15\n\rmax_vt_weight\x18\x05 \x01(\r\x12\x15\n\rmax_dr_weight\x18\x06 \x01(\r\x12\x17\n\x0f\x61\x63tivity_period\x18\x07 \x01(\r\x12$\n\x1creputation_expire_alpha_diff\x18\x08 \x01(\r\x12\x1b\n\x13reputation_issuance\x18\t \x01(\r\x12 \n\x18reputation_issuance_stop\x18\n \x01(\r\x12&\n\x1ereputation_penalization_factor\x18\x0b \x01(\x01\x12\x1c\n\x14mining_backup_factor\x18\x0c \x01(\r\x12!\n\x19mining_replication_factor\x18\r \x01(\r\x12\x1a\n\x12\x63ollateral_minimum\x18\x0e \x01(\x04\x12\x16\n\x0e\x63ollateral_age\x18\x0f \x01(\r\x12\x19\n\x11superblock_period\x18\x10 \x01(\r\x12\x14\n\x0c\x65xtra_rounds\x18\x11 \x01(\r\x12\x1a\n\x12initial_difficulty\x18\x12 \x01(\r\x12&\n\x1e\x65pochs_with_initial_difficulty\x18\x13 \x01(\r\"@\n\x08VrfProof\x12\r\n\x05proof\x18\x01 \x01(\x0c\x12%\n\npublic_key\x18\x02 \x01(\x0b\x32\x11.witnet.PublicKey\"`\n\x15\x44\x61taRequestVrfMessage\x12(\n\tvrf_input\x18\x01 \x01(\x0b\x32\x15.witnet.CheckpointVRF\x12\x1d\n\x07\x64r_hash\x18\x02 \x01(\x0b\x32\x0c.witnet.Hash\">\n\x1b\x44\x61taRequestEligibilityClaim\x12\x1f\n\x05proof\x18\x01 \x01(\x0b\x32\x10.witnet.VrfProof\"\xb7\x01\n\x0eSuperBlockVote\x12/\n\x0f\x62n256_signature\x18\x01 \x01(\x0b\x32\x16.witnet.Bn256Signature\x12\x33\n\x13secp256k1_signature\x18\x02 \x01(\x0b\x32\x16.witnet.KeyedSignature\x12%\n\x0fsuperblock_hash\x18\x03 \x01(\x0b\x32\x0c.witnet.Hash\x12\x18\n\x10superblock_index\x18\x04 \x01(\x07\x62\x06proto3'
 )
 
 
@@ -39,8 +39,8 @@ _DATAREQUESTOUTPUT_RADREQUEST_RADTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3025,
-  serialized_end=3047,
+  serialized_start=3107,
+  serialized_end=3129,
 )
 _sym_db.RegisterEnumDescriptor(_DATAREQUESTOUTPUT_RADREQUEST_RADTYPE)
 
@@ -234,16 +234,16 @@ _VERSION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='last_epoch', full_name='witnet.Version.last_epoch', index=6,
-      number=7, type=7, cpp_type=3, label=1,
+      name='nonce', full_name='witnet.Version.nonce', index=6,
+      number=7, type=6, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='nonce', full_name='witnet.Version.nonce', index=7,
-      number=8, type=6, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
+      name='beacon', full_name='witnet.Version.beacon', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -260,7 +260,7 @@ _VERSION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=537,
-  serialized_end=743,
+  serialized_end=759,
 )
 
 
@@ -341,8 +341,8 @@ _PEERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=767,
-  serialized_end=806,
+  serialized_start=783,
+  serialized_end=822,
 )
 
 
@@ -373,8 +373,8 @@ _BLOCK_BLOCKELIGIBILITYCLAIM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=957,
-  serialized_end=1013,
+  serialized_start=973,
+  serialized_end=1029,
 )
 
 _BLOCK_BLOCKHEADER_BLOCKMERKLEROOTS = _descriptor.Descriptor(
@@ -439,8 +439,8 @@ _BLOCK_BLOCKHEADER_BLOCKMERKLEROOTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1259,
-  serialized_end=1536,
+  serialized_start=1275,
+  serialized_end=1552,
 )
 
 _BLOCK_BLOCKHEADER = _descriptor.Descriptor(
@@ -498,8 +498,8 @@ _BLOCK_BLOCKHEADER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1016,
-  serialized_end=1536,
+  serialized_start=1032,
+  serialized_end=1552,
 )
 
 _BLOCK_BLOCKTRANSACTIONS = _descriptor.Descriptor(
@@ -564,8 +564,8 @@ _BLOCK_BLOCKTRANSACTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1539,
-  serialized_end=1841,
+  serialized_start=1555,
+  serialized_end=1857,
 )
 
 _BLOCK = _descriptor.Descriptor(
@@ -609,8 +609,8 @@ _BLOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=809,
-  serialized_end=1841,
+  serialized_start=825,
+  serialized_end=1857,
 )
 
 
@@ -641,8 +641,8 @@ _INVENTORYANNOUNCEMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1843,
-  serialized_end=1909,
+  serialized_start=1859,
+  serialized_end=1925,
 )
 
 
@@ -673,8 +673,8 @@ _INVENTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1911,
-  serialized_end=1972,
+  serialized_start=1927,
+  serialized_end=1988,
 )
 
 
@@ -693,6 +693,13 @@ _LASTBEACON = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='highest_superblock_checkpoint', full_name='witnet.LastBeacon.highest_superblock_checkpoint', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -705,8 +712,8 @@ _LASTBEACON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1974,
-  serialized_end=2046,
+  serialized_start=1991,
+  serialized_end=2128,
 )
 
 
@@ -744,8 +751,8 @@ _OUTPUTPOINTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2048,
-  serialized_end=2123,
+  serialized_start=2130,
+  serialized_end=2205,
 )
 
 
@@ -790,8 +797,8 @@ _VALUETRANSFEROUTPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2125,
-  serialized_end=2216,
+  serialized_start=2207,
+  serialized_end=2298,
 )
 
 
@@ -829,8 +836,8 @@ _DATAREQUESTOUTPUT_RADREQUEST_RADFILTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2690,
-  serialized_end=2727,
+  serialized_start=2772,
+  serialized_end=2809,
 )
 
 _DATAREQUESTOUTPUT_RADREQUEST_RADRETRIEVE = _descriptor.Descriptor(
@@ -874,8 +881,8 @@ _DATAREQUESTOUTPUT_RADREQUEST_RADRETRIEVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2729,
-  serialized_end=2831,
+  serialized_start=2811,
+  serialized_end=2913,
 )
 
 _DATAREQUESTOUTPUT_RADREQUEST_RADAGGREGATE = _descriptor.Descriptor(
@@ -912,8 +919,8 @@ _DATAREQUESTOUTPUT_RADREQUEST_RADAGGREGATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2833,
-  serialized_end=2929,
+  serialized_start=2915,
+  serialized_end=3011,
 )
 
 _DATAREQUESTOUTPUT_RADREQUEST_RADTALLY = _descriptor.Descriptor(
@@ -950,8 +957,8 @@ _DATAREQUESTOUTPUT_RADREQUEST_RADTALLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2931,
-  serialized_end=3023,
+  serialized_start=3013,
+  serialized_end=3105,
 )
 
 _DATAREQUESTOUTPUT_RADREQUEST = _descriptor.Descriptor(
@@ -1003,8 +1010,8 @@ _DATAREQUESTOUTPUT_RADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2457,
-  serialized_end=3047,
+  serialized_start=2539,
+  serialized_end=3129,
 )
 
 _DATAREQUESTOUTPUT = _descriptor.Descriptor(
@@ -1083,8 +1090,8 @@ _DATAREQUESTOUTPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2219,
-  serialized_end=3047,
+  serialized_start=2301,
+  serialized_end=3129,
 )
 
 
@@ -1115,8 +1122,8 @@ _INPUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3049,
-  serialized_end=3103,
+  serialized_start=3131,
+  serialized_end=3185,
 )
 
 
@@ -1154,8 +1161,8 @@ _VTTRANSACTIONBODY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3105,
-  serialized_end=3201,
+  serialized_start=3187,
+  serialized_end=3283,
 )
 
 
@@ -1193,8 +1200,8 @@ _VTTRANSACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3203,
-  serialized_end=3303,
+  serialized_start=3285,
+  serialized_end=3385,
 )
 
 
@@ -1239,8 +1246,8 @@ _DRTRANSACTIONBODY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3306,
-  serialized_end=3448,
+  serialized_start=3388,
+  serialized_end=3530,
 )
 
 
@@ -1278,8 +1285,8 @@ _DRTRANSACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3450,
-  serialized_end=3550,
+  serialized_start=3532,
+  serialized_end=3632,
 )
 
 
@@ -1345,8 +1352,8 @@ _COMMITTRANSACTIONBODY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3553,
-  serialized_end=3827,
+  serialized_start=3635,
+  serialized_end=3909,
 )
 
 
@@ -1384,8 +1391,8 @@ _COMMITTRANSACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3829,
-  serialized_end=3937,
+  serialized_start=3911,
+  serialized_end=4019,
 )
 
 
@@ -1430,8 +1437,8 @@ _REVEALTRANSACTIONBODY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3939,
-  serialized_end=4048,
+  serialized_start=4021,
+  serialized_end=4130,
 )
 
 
@@ -1469,8 +1476,8 @@ _REVEALTRANSACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4050,
-  serialized_end=4158,
+  serialized_start=4132,
+  serialized_end=4240,
 )
 
 
@@ -1529,8 +1536,8 @@ _TALLYTRANSACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4161,
-  serialized_end=4372,
+  serialized_start=4243,
+  serialized_end=4454,
 )
 
 
@@ -1568,8 +1575,8 @@ _MINTTRANSACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4374,
-  serialized_end=4452,
+  serialized_start=4456,
+  serialized_end=4534,
 )
 
 
@@ -1640,8 +1647,8 @@ _TRANSACTION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=4455,
-  serialized_end=4744,
+  serialized_start=4537,
+  serialized_end=4826,
 )
 
 
@@ -1677,8 +1684,8 @@ _HASH = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=4746,
-  serialized_end=4778,
+  serialized_start=4828,
+  serialized_end=4860,
 )
 
 
@@ -1709,8 +1716,8 @@ _SECP256K1SIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4780,
-  serialized_end=4813,
+  serialized_start=4862,
+  serialized_end=4895,
 )
 
 
@@ -1746,8 +1753,8 @@ _SIGNATURE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=4815,
-  serialized_end=4883,
+  serialized_start=4897,
+  serialized_end=4965,
 )
 
 
@@ -1778,8 +1785,8 @@ _BN256SIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4885,
-  serialized_end=4920,
+  serialized_start=4967,
+  serialized_end=5002,
 )
 
 
@@ -1810,8 +1817,8 @@ _PUBLICKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4922,
-  serialized_end=4953,
+  serialized_start=5004,
+  serialized_end=5035,
 )
 
 
@@ -1842,8 +1849,8 @@ _BN256PUBLICKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4955,
-  serialized_end=4991,
+  serialized_start=5037,
+  serialized_end=5073,
 )
 
 
@@ -1874,8 +1881,8 @@ _PUBLICKEYHASH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4993,
-  serialized_end=5022,
+  serialized_start=5075,
+  serialized_end=5104,
 )
 
 
@@ -1913,8 +1920,8 @@ _KEYEDSIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5024,
-  serialized_end=5117,
+  serialized_start=5106,
+  serialized_end=5199,
 )
 
 
@@ -1952,8 +1959,8 @@ _BN256KEYEDSIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5119,
-  serialized_end=5227,
+  serialized_start=5201,
+  serialized_end=5309,
 )
 
 
@@ -1984,8 +1991,8 @@ _ADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5229,
-  serialized_end=5255,
+  serialized_start=5311,
+  serialized_end=5337,
 )
 
 
@@ -2023,8 +2030,8 @@ _CHECKPOINTBEACON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5257,
-  serialized_end=5334,
+  serialized_start=5339,
+  serialized_end=5416,
 )
 
 
@@ -2062,8 +2069,8 @@ _CHECKPOINTVRF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5336,
-  serialized_end=5408,
+  serialized_start=5418,
+  serialized_end=5490,
 )
 
 
@@ -2106,8 +2113,8 @@ _INVENTORYENTRY = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=5410,
-  serialized_end=5493,
+  serialized_start=5492,
+  serialized_end=5575,
 )
 
 
@@ -2148,85 +2155,106 @@ _CONSENSUSCONSTANTS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='max_block_weight', full_name='witnet.ConsensusConstants.max_block_weight', index=4,
+      name='max_vt_weight', full_name='witnet.ConsensusConstants.max_vt_weight', index=4,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='activity_period', full_name='witnet.ConsensusConstants.activity_period', index=5,
+      name='max_dr_weight', full_name='witnet.ConsensusConstants.max_dr_weight', index=5,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reputation_expire_alpha_diff', full_name='witnet.ConsensusConstants.reputation_expire_alpha_diff', index=6,
+      name='activity_period', full_name='witnet.ConsensusConstants.activity_period', index=6,
       number=7, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reputation_issuance', full_name='witnet.ConsensusConstants.reputation_issuance', index=7,
+      name='reputation_expire_alpha_diff', full_name='witnet.ConsensusConstants.reputation_expire_alpha_diff', index=7,
       number=8, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reputation_issuance_stop', full_name='witnet.ConsensusConstants.reputation_issuance_stop', index=8,
+      name='reputation_issuance', full_name='witnet.ConsensusConstants.reputation_issuance', index=8,
       number=9, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reputation_penalization_factor', full_name='witnet.ConsensusConstants.reputation_penalization_factor', index=9,
-      number=10, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='mining_backup_factor', full_name='witnet.ConsensusConstants.mining_backup_factor', index=10,
-      number=11, type=13, cpp_type=3, label=1,
+      name='reputation_issuance_stop', full_name='witnet.ConsensusConstants.reputation_issuance_stop', index=9,
+      number=10, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mining_replication_factor', full_name='witnet.ConsensusConstants.mining_replication_factor', index=11,
+      name='reputation_penalization_factor', full_name='witnet.ConsensusConstants.reputation_penalization_factor', index=10,
+      number=11, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mining_backup_factor', full_name='witnet.ConsensusConstants.mining_backup_factor', index=11,
       number=12, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='collateral_minimum', full_name='witnet.ConsensusConstants.collateral_minimum', index=12,
-      number=13, type=4, cpp_type=4, label=1,
+      name='mining_replication_factor', full_name='witnet.ConsensusConstants.mining_replication_factor', index=12,
+      number=13, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='collateral_age', full_name='witnet.ConsensusConstants.collateral_age', index=13,
-      number=14, type=13, cpp_type=3, label=1,
+      name='collateral_minimum', full_name='witnet.ConsensusConstants.collateral_minimum', index=13,
+      number=14, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='superblock_period', full_name='witnet.ConsensusConstants.superblock_period', index=14,
+      name='collateral_age', full_name='witnet.ConsensusConstants.collateral_age', index=14,
       number=15, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='extra_rounds', full_name='witnet.ConsensusConstants.extra_rounds', index=15,
+      name='superblock_period', full_name='witnet.ConsensusConstants.superblock_period', index=15,
       number=16, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='extra_rounds', full_name='witnet.ConsensusConstants.extra_rounds', index=16,
+      number=17, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='initial_difficulty', full_name='witnet.ConsensusConstants.initial_difficulty', index=17,
+      number=18, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='epochs_with_initial_difficulty', full_name='witnet.ConsensusConstants.epochs_with_initial_difficulty', index=18,
+      number=19, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2243,8 +2271,8 @@ _CONSENSUSCONSTANTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5496,
-  serialized_end=6011,
+  serialized_start=5578,
+  serialized_end=6181,
 )
 
 
@@ -2282,8 +2310,8 @@ _VRFPROOF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6013,
-  serialized_end=6077,
+  serialized_start=6183,
+  serialized_end=6247,
 )
 
 
@@ -2321,8 +2349,8 @@ _DATAREQUESTVRFMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6079,
-  serialized_end=6175,
+  serialized_start=6249,
+  serialized_end=6345,
 )
 
 
@@ -2353,75 +2381,8 @@ _DATAREQUESTELIGIBILITYCLAIM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6177,
-  serialized_end=6239,
-)
-
-
-_SUPERBLOCK = _descriptor.Descriptor(
-  name='SuperBlock',
-  full_name='witnet.SuperBlock',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='ars_root', full_name='witnet.SuperBlock.ars_root', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data_request_root', full_name='witnet.SuperBlock.data_request_root', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='index', full_name='witnet.SuperBlock.index', index=2,
-      number=3, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='last_block', full_name='witnet.SuperBlock.last_block', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='last_block_in_previous_superblock', full_name='witnet.SuperBlock.last_block_in_previous_superblock', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tally_root', full_name='witnet.SuperBlock.tally_root', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=6242,
-  serialized_end=6467,
+  serialized_start=6347,
+  serialized_end=6409,
 )
 
 
@@ -2473,8 +2434,8 @@ _SUPERBLOCKVOTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6470,
-  serialized_end=6653,
+  serialized_start=6412,
+  serialized_end=6595,
 )
 
 _MESSAGE_COMMAND.fields_by_name['Version'].message_type = _VERSION
@@ -2521,6 +2482,7 @@ _MESSAGE_COMMAND.fields_by_name['SuperBlockVote'].containing_oneof = _MESSAGE_CO
 _MESSAGE.fields_by_name['kind'].message_type = _MESSAGE_COMMAND
 _VERSION.fields_by_name['sender_address'].message_type = _ADDRESS
 _VERSION.fields_by_name['receiver_address'].message_type = _ADDRESS
+_VERSION.fields_by_name['beacon'].message_type = _LASTBEACON
 _PEERS.fields_by_name['peers'].message_type = _ADDRESS
 _BLOCK_BLOCKELIGIBILITYCLAIM.fields_by_name['proof'].message_type = _VRFPROOF
 _BLOCK_BLOCKELIGIBILITYCLAIM.containing_type = _BLOCK
@@ -2549,6 +2511,7 @@ _BLOCK.fields_by_name['txns'].message_type = _BLOCK_BLOCKTRANSACTIONS
 _INVENTORYANNOUNCEMENT.fields_by_name['inventory'].message_type = _INVENTORYENTRY
 _INVENTORYREQUEST.fields_by_name['inventory'].message_type = _INVENTORYENTRY
 _LASTBEACON.fields_by_name['highest_block_checkpoint'].message_type = _CHECKPOINTBEACON
+_LASTBEACON.fields_by_name['highest_superblock_checkpoint'].message_type = _CHECKPOINTBEACON
 _OUTPUTPOINTER.fields_by_name['transaction_id'].message_type = _HASH
 _VALUETRANSFEROUTPUT.fields_by_name['pkh'].message_type = _PUBLICKEYHASH
 _DATAREQUESTOUTPUT_RADREQUEST_RADFILTER.containing_type = _DATAREQUESTOUTPUT_RADREQUEST
@@ -2642,11 +2605,6 @@ _VRFPROOF.fields_by_name['public_key'].message_type = _PUBLICKEY
 _DATAREQUESTVRFMESSAGE.fields_by_name['vrf_input'].message_type = _CHECKPOINTVRF
 _DATAREQUESTVRFMESSAGE.fields_by_name['dr_hash'].message_type = _HASH
 _DATAREQUESTELIGIBILITYCLAIM.fields_by_name['proof'].message_type = _VRFPROOF
-_SUPERBLOCK.fields_by_name['ars_root'].message_type = _HASH
-_SUPERBLOCK.fields_by_name['data_request_root'].message_type = _HASH
-_SUPERBLOCK.fields_by_name['last_block'].message_type = _HASH
-_SUPERBLOCK.fields_by_name['last_block_in_previous_superblock'].message_type = _HASH
-_SUPERBLOCK.fields_by_name['tally_root'].message_type = _HASH
 _SUPERBLOCKVOTE.fields_by_name['bn256_signature'].message_type = _BN256SIGNATURE
 _SUPERBLOCKVOTE.fields_by_name['secp256k1_signature'].message_type = _KEYEDSIGNATURE
 _SUPERBLOCKVOTE.fields_by_name['superblock_hash'].message_type = _HASH
@@ -2691,7 +2649,6 @@ DESCRIPTOR.message_types_by_name['ConsensusConstants'] = _CONSENSUSCONSTANTS
 DESCRIPTOR.message_types_by_name['VrfProof'] = _VRFPROOF
 DESCRIPTOR.message_types_by_name['DataRequestVrfMessage'] = _DATAREQUESTVRFMESSAGE
 DESCRIPTOR.message_types_by_name['DataRequestEligibilityClaim'] = _DATAREQUESTELIGIBILITYCLAIM
-DESCRIPTOR.message_types_by_name['SuperBlock'] = _SUPERBLOCK
 DESCRIPTOR.message_types_by_name['SuperBlockVote'] = _SUPERBLOCKVOTE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -3061,13 +3018,6 @@ DataRequestEligibilityClaim = _reflection.GeneratedProtocolMessageType('DataRequ
   # @@protoc_insertion_point(class_scope:witnet.DataRequestEligibilityClaim)
   })
 _sym_db.RegisterMessage(DataRequestEligibilityClaim)
-
-SuperBlock = _reflection.GeneratedProtocolMessageType('SuperBlock', (_message.Message,), {
-  'DESCRIPTOR' : _SUPERBLOCK,
-  '__module__' : 'witnet_pb2'
-  # @@protoc_insertion_point(class_scope:witnet.SuperBlock)
-  })
-_sym_db.RegisterMessage(SuperBlock)
 
 SuperBlockVote = _reflection.GeneratedProtocolMessageType('SuperBlockVote', (_message.Message,), {
   'DESCRIPTOR' : _SUPERBLOCKVOTE,

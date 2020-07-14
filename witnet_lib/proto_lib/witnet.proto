@@ -30,8 +30,8 @@ message Version {
     Address sender_address = 4;
     Address receiver_address = 5;
     string user_agent = 6;
-    fixed32 last_epoch = 7;
-    fixed64 nonce = 8;
+    fixed64 nonce = 7;
+    LastBeacon beacon = 8;
 }
 
 message Verack {
@@ -89,6 +89,7 @@ message InventoryRequest {
 
 message LastBeacon {
     CheckpointBeacon highest_block_checkpoint = 1;
+    CheckpointBeacon highest_superblock_checkpoint = 2;
 }
 
 message OutputPointer {
@@ -287,18 +288,21 @@ message ConsensusConstants {
     uint32 checkpoints_period = 2;
     Hash bootstrap_hash = 3;
     Hash genesis_hash = 4;
-    uint32 max_block_weight = 5;
-    uint32 activity_period = 6;
-    uint32 reputation_expire_alpha_diff = 7;
-    uint32 reputation_issuance = 8;
-    uint32 reputation_issuance_stop = 9;
-    double reputation_penalization_factor = 10;
-    uint32 mining_backup_factor = 11;
-    uint32 mining_replication_factor = 12;
-    uint64 collateral_minimum = 13;
-    uint32 collateral_age = 14;
-    uint32 superblock_period = 15;
-    uint32 extra_rounds = 16;
+    uint32 max_vt_weight = 5;
+    uint32 max_dr_weight = 6;
+    uint32 activity_period = 7;
+    uint32 reputation_expire_alpha_diff = 8;
+    uint32 reputation_issuance = 9;
+    uint32 reputation_issuance_stop = 10;
+    double reputation_penalization_factor = 11;
+    uint32 mining_backup_factor = 12;
+    uint32 mining_replication_factor = 13;
+    uint64 collateral_minimum = 14;
+    uint32 collateral_age = 15;
+    uint32 superblock_period = 16;
+    uint32 extra_rounds = 17;
+    uint32 initial_difficulty = 18;
+    uint32 epochs_with_initial_difficulty = 19;
 }
 
 message VrfProof {
@@ -313,15 +317,6 @@ message DataRequestVrfMessage {
 
 message DataRequestEligibilityClaim {
     VrfProof proof = 1;
-}
-
-message SuperBlock {
-    Hash ars_root = 1;
-    Hash data_request_root = 2;
-    uint32 index = 3;
-    Hash last_block = 4;
-    Hash last_block_in_previous_superblock = 5;
-    Hash tally_root = 6;
 }
 
 message SuperBlockVote {
