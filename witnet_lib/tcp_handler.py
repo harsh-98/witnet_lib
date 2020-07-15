@@ -17,7 +17,7 @@ class TCPSocket:
         self.node_addr = node_addr
         host, port = resolve_url(node_addr)
         if self.sock_type == "connect":
-            log.info(f"Connecting to {host}:{port}")
+            log.info(f"Connecting to %s:%s", host, port)
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             self.sock.connect((host, port))
 
@@ -34,13 +34,18 @@ class TCPSocket:
         if self.sock.fileno() == -1:
             self.connect(self.node_addr)
         msg = self.sock.recv(length)
-        log.debug(f"Receiving [<] {msg}")
+        log.debug("Receiving [<] %s", msg)
         return msg
 
     def receive_witnet_msg(self):
         length = self.receive(4)
-        rece_len = int.from_bytes(length, byteorder='big')
-        return self.receive(rece_len)
+        total_len = int.from_bytes(length, byteorder='big')
+        reced_len = 0
+        msg = b''
+        while reced_len < total_len:
+            msg += self.receive(total_len-reced_len)
+            reced_len = len(msg)
+        return msg
 
     def close(self):
         self.sock.close()
