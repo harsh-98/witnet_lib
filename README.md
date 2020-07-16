@@ -32,7 +32,7 @@ Listening to messages from witnet node.
 
 ```python
 #After performing handshake with node.
-msg = client.tcp_handler.receive_witnet_msg() # this returns serialized message from node
+msg = client.receive_msg() # this returns serialized message from node
 parsed_msg = client.msg_handler.parse_msg(msg) # we need to parse the message
 print(parsed_msg)
 print(parsed_msg.kind)
@@ -42,7 +42,7 @@ The connection is of `keep alive` type, so messages are continually sent from wi
 
 ```python
 while True:
-    msg = client.tcp_handler.receive_witnet_msg() # this returns serialized message from node
+    msg = client.receive_msg() # this returns serialized message from node
     parsed_msg = client.msg_handler.parse_msg(msg)
     print(parsed_msg)
 ```
@@ -54,9 +54,9 @@ Sending message to witnet node.
 cmd = client.msg_handler.version_cmd("127.0.0.1:21337") # this returns a version message
 print(cmd)
 msg = client.msg_handler.serialize(cmd)# this returns serialized messsage ready to be sent to node
-client.tcp_handler.send(msg)
-msg_from_node = client.tcp_handler.receive_witnet_msg() # this returns only one whole message from node
-msg_from_node_with_msg_len = client.tcp_handler.receive(30) # this returns x bytes from connection stream
+client.send_msg(msg)
+msg_from_node = client.receive_msg() # this returns only one whole message from node
+msg_from_node_with_msg_len, reced_or_not = client.tcp_handler.receive(30) # this returns x bytes from connection stream
 ```
 
 Mapping all nodes in the network (DAG fashion)

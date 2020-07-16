@@ -7,15 +7,24 @@ from witnet_lib.tcp_handler import TCPSocket
 class WitnetClient():
 
     def __init__(self, config):
+        # Handle if persistent is not passed
+        try:
+            _ = config.persistent
+        except Exception as err:
+            log.error(err)
+            config.persistent = False
+
         self.config = config
+        self.persistent = config.persistent
         self.msg_handler = WitnetMsgHandler(self.config)
         # TODO
         # self.rpc_handler = RPC(config.rpc_addr)
 
     def handshake(self, peer_addr):
         # connect to peer
-        self.tcp_handler = TCPSocket("connect")
-        self.tcp_handler.connect(peer_addr)
+        self.peer_addr = peer_addr
+        self.tcp_handler = TCPSocket(peer_addr)
+        self.tcp_handler.connect()
 
         # TODO with testnet 0.9.2 consensus algorithm will be upgraded to support superblock and block checkpoint
         # self.rpc_handler.connect()
@@ -37,6 +46,19 @@ class WitnetClient():
         verack_msg = self.msg_handler.serialize(verack_cmd)
         self.tcp_handler.send(verack_msg)
 
+    def send_msg(self, msg):
+        succeed = self.tcp_handler.send(msg)
+        if not succeed and self.persistent:
+            self.handshake(self.peer_addr)
+            self.tcp_handler.send(msg)
+
+    def receive_msg(self):
+        msg, reced = self.tcp_handler.receive_witnet_msg()
+        if not reced and self.persistent:
+            self.handshake(self.peer_addr)
+            msg, reced = self.tcp_handler.receive_witnet_msg()
+        return msg
+
     def get_peers(self):
         # send get peer request to node
         get_peers_cmd = self.msg_handler.get_peers_cmd()
@@ -44,7 +66,7 @@ class WitnetClient():
         self.tcp_handler.send(get_peers_msg)
         i = 0
         while i < 10:
-            msg = self.tcp_handler.receive_witnet_msg()
+            msg = self.receive_msg()
             parsed_msg = self.msg_handler.parse_msg(msg)
             peers = self.msg_handler.parse_peers(parsed_msg)
             if len(peers) > 0:
