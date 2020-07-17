@@ -53,6 +53,12 @@ class WitnetClient():
             self.tcp_handler.send(msg)
 
     def receive_msg(self):
+        """support persistent connection
+        if message is not received retry once more if persistent connection is True
+
+        Returns:
+            bytes: returns whatever bytes are received, even if incomplete
+        """
         msg, reced = self.tcp_handler.receive_witnet_msg()
         if not reced and self.persistent:
             self.handshake(self.peer_addr)

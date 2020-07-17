@@ -2,21 +2,14 @@ import logging
 import os
 
 
-class OneLineExceptionFormatter(logging.Formatter):
-    def formatException(self, exc_info):
-        result = super().formatException(exc_info)
-        return repr(result)
-
-    def format(self, record):
-        result = super().format(record)
-        if record.exc_text:
-            result = result.replace("\n", "")
-        return result
+def get_logger(logger_name):
+    logger = logging.getLogger(logger_name)
+    handler = logging.StreamHandler()
+    formatter = logging.Formatter(logging.BASIC_FORMAT)
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+    logger.setLevel(os.environ.get("LOGLEVEL", "INFO"))
+    return logger
 
 
-handler = logging.StreamHandler()
-formatter = OneLineExceptionFormatter(logging.BASIC_FORMAT)
-handler.setFormatter(formatter)
-log = logging.getLogger("witnet_lib")
-log.setLevel(os.environ.get("LOGLEVEL", "INFO"))
-log.addHandler(handler)
+log = get_logger("witnet_lib")
