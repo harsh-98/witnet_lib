@@ -15,7 +15,11 @@ class TCPSocket:
         host, port = resolve_url(self.node_addr)
         self.log.info("Connecting to %s:%s", host, port)
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock.connect((host, port))
+        # self.sock.settimeout(4)
+        try:
+            self.sock.connect((host, port))
+        except OSError as err:
+            self.log.fatal("Disconnect %s", err)
 
     def send(self, msg):
         """for sending byte msg
@@ -46,7 +50,16 @@ class TCPSocket:
         """
         if self.sock.fileno() == -1:
             return b'', False
-        msg = self.sock.recv(x)
+        """ 
+        connection reset from peer 
+        throughs error handle that.
+        """
+        try:
+            msg = self.sock.recv(x)
+        except ConnectionResetError as err:
+            self.log.debug("Connection reset while receiving: %s", err)
+            return b'', False
+
         self.log.debug("Receiving [<] %s", msg)
         return msg, True
 
@@ -103,4 +116,8 @@ class TCPSocket:
         return self.rece_iteratively(msg_len)
 
     def close(self):
-        self.sock.close()
+        if not self.is_closed():
+            self.sock.close()
+
+    def is_closed(self):
+        return self.sock.fileno() == -1

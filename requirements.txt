@@ -1,2 +1,2 @@
 google==2.0.3
-protobuf
+protobuf==3.12.2

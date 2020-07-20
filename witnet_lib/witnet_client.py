@@ -81,4 +81,8 @@ class WitnetClient():
         return []
 
     def close(self):
-        self.tcp_handler.close()
+        if not self.is_closed():
+            self.tcp_handler.close()
+
+    def is_closed(self):
+        return self.tcp_handler.is_closed()
