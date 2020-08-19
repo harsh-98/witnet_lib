@@ -11,7 +11,7 @@ class WitnetClient():
         try:
             _ = config.persistent
         except Exception as err:
-            log.error(err)
+            #  log.error(err)
             config.persistent = False
 
         self.config = config
