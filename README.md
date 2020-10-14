@@ -18,8 +18,8 @@ from witnet_lib.utils import AttrDict
 
 # Setting config
 config = AttrDict({
-    "genesis_sec": 1600851600,
-    "magic": 7566,
+    "genesis_sec": 1602666000,
+    "magic": 40941,
     "sender_addr": "127.0.0.1:21341",
     "time_per_epoch": 45,
 })
@@ -65,8 +65,8 @@ Mapping all nodes in the network (DAG fashion)
 from witnet_lib import utils
 from witnet_lib.map_nodes  import MapNodes
 config = utils.AttrDict({
-    "genesis_sec": 1600851600,
-    "magic": 7566,
+    "genesis_sec": 1602666000,
+    "magic": 40941,
     "sender_addr": "127.0.0.1:21341",
     "time_per_epoch": 45,
 })
